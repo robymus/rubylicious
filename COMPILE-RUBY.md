@@ -29,7 +29,7 @@ Note: due to some magical issue, revision.h doesn't exists and make doesn't crea
 
 Note: for built in modules to work, development package dependencies might be needed.
 
-Then copy `libruby-static.a` and header files `ruby.h`, `ruby/*.h`, `ruby/backward/*.h`
+Then copy `libruby-static.a` and header files from `include` - make sure that you have `config.h` as well.
 
 ## Compiling for win32
 
@@ -53,6 +53,7 @@ touch revision.h
 make -j 8
 ```
 
-Then copy `libruby-static.a` and header files `ruby.h`, `ruby/*.h`, `ruby/backward/*.h`
+Then copy `libruby-static.a` and header files from `include` - make sure that you have `config.h` as well.
+It might not be in include directory, but at `.ext/include/i386-mingw32/ruby/config.h` - this is again, magical.
 
 Note: I couldn't get the fiddle gem (libffi) and dbm gem working, but it's not necessary.
