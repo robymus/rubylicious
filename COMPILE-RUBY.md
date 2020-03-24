@@ -11,7 +11,8 @@ The 'make install' phase is optional, as we are only interested in the header fi
 ## Preparation
 
 Download release source code of ruby 2.7.0 from https://github.com/ruby/ruby/releases/tag/v2_7_0
-Other versions might also work
+
+Other versions might also work.
 
 
 ## Compiling for linux
@@ -43,11 +44,11 @@ sudo dnf install mingw32-gcc mingw32-gcc-c++ mingw32-readline mingw32-openssl
 
 Install the same version of ruby (eg. 2.7.0) on the host machine as being compiled.
 
-Note: we disable gdbm, dbm, and fiddle modules, just in case.
+Note: we disable gdbm, dbm, and fiddle modules, just in case. Also syslog and pty, as it's not supported.
 
 ```
 autoconf
-mingw32-configure --disable-dln --with-static-linked-ext --prefix=/tmp/rubylicious-win32 --target=i686-w32-mingw32 --with-out-exts=fiddle,gdbm,dbm
+mingw32-configure --disable-dln --with-static-linked-ext --prefix=/tmp/rubylicious-win32 --target=i686-w32-mingw32 --with-out-ext=fiddle,gdbm,dbm,syslog,pty
 touch revision.h
 make -j 8
 ```
