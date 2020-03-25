@@ -32,6 +32,12 @@ VertexShader thingy:
 	- set parameters for the vertex shader (eg. matrix, global parameters, t, etc.)
 	- rotation, camera, etc. set up in ruby
 	- we can render multiple meshes (eg. an object) with the same vertex shader / parameters
+	- shader params as hashmap, special ones, like $textures: [tex1, tex2], or $texture0: tex1, $texture1: tex2
+
+Rendering:
+	- render to texture
+	- render fullsize (rect 0,0-1,1) with shader + parameter
+	- postprocessing, compositing using these
 
 Objects:
 	- built in ruby, aggregate meshes
@@ -52,4 +58,6 @@ Events:
 
 Sound:
 	- something is needed, with time sync, pause, etc.
-	- debug: .wav (seeking, pause), later: .mp3
+	- debug: .wav (seeking, pause), later: .mp3		
+
+Excellent documentation is needed for the ruby interface. Try rdoc?
