@@ -18,7 +18,7 @@ gcc/g++, but you have those anyway :)
 
 ## Mingw32 cross compiling
 
-Cross compiler toolchain - see [RubyCompile.md](CompileRuby.md)
+Cross compiler toolchain - see [CompileRuby.md](CompileRuby.md)
 
 
 Libraries: SDL2, SDL2_image
