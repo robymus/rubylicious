@@ -1,0 +1,55 @@
+Ideas, thingies:
+
+Textures:
+	- loadTexture(filename, optional cropping)
+		-> does the converting: https://stackoverflow.com/questions/821244/sdl-surface-to-opengl-texture
+		-> SDL_Surface + scaling factor (exposed to ruby)
+		-> free (?)
+
+Primitives:
+	- vector2,3,4
+	- matrix2,3,4
+
+Mesh:
+	- create from ruby (maybe loaders later? or implemented in ruby?)
+	- indexed triangle mode
+		- coordinates, triangles with indices
+		- x,y,z
+			- optional: nx,ny,nz
+			- optional: u,v,w
+			- extra optional data: maybe create a universal format with a map?
+		- optional flat shade mode: triangle normals calculated
+		- mandatory: fragment shader
+	- triangle mode
+		- same as indexed, but no list of vertices, list of triangles is with 3 vertex
+	- quad mode
+		- same as triangle, but quads (we don't do indexed quad, because just not)
+	- prescale u/v based on texture
+	- render
+
+VertexShader thingy:
+	- set a vertex shader
+	- set parameters for the vertex shader (eg. matrix, global parameters, t, etc.)
+	- rotation, camera, etc. set up in ruby
+	- we can render multiple meshes (eg. an object) with the same vertex shader / parameters
+
+Objects:
+	- built in ruby, aggregate meshes
+
+Particles:
+	- TODO
+
+Other interesting effects:
+	- TODO
+	
+Setup, control:
+	- resolution, window, double buffering, whatever
+	- close sdl, exit everything
+	- some kind of UI options later? (resolution select, etc.)
+
+Events:
+	- SDL events routed to ruby (event polling?)
+
+Sound:
+	- something is needed, with time sync, pause, etc.
+	- debug: .wav (seeking, pause), later: .mp3
