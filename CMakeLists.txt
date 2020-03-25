@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.15)
 
 # We are building the rubylicious demo engine, yay!
 project(Rubylicious)
@@ -27,7 +27,7 @@ link_directories("arch/${RUBY_ARCH}/ruby-${RUBY_VERSION}/lib")
 
 # Find SDL2
 # using SDL2 modules from https://github.com/aminosbh/sdl2-cmake-modules
-list(APPEND CMAKE_MODULE_PATH cmake/sdl2)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/sdl2)
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
