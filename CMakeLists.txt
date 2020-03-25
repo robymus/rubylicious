@@ -15,6 +15,9 @@ include(cmake/ruby.cmake)
 include(cmake/sdl2.cmake)
 include(cmake/opengl.cmake)
 
+# header only libraries
+include_directories(lib/glm)
+
 # finally the code
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)

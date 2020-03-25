@@ -1,3 +1,6 @@
 [submodule "cmake/sdl2"]
 	path = cmake/sdl2
 	url = https://github.com/aminosbh/sdl2-cmake-modules.git
+[submodule "lib/glm"]
+	path = lib/glm
+	url = https://github.com/g-truc/glm.git
