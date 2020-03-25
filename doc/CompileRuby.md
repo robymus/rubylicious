@@ -39,7 +39,6 @@ Install cross-compiler toolchain:
 
 ```
 sudo dnf install mingw32-gcc mingw32-gcc-c++ mingw32-readline mingw32-openssl
-
 ```
 
 Install the same version of ruby (eg. 2.7.0) on the host machine as being compiled.
