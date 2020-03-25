@@ -22,9 +22,11 @@ include_directories(lib/glm)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_executable(helloworld helloworld.c)
+add_executable(rubylicious
+	src/helloworld.c
+)
 
-target_link_libraries(helloworld
+target_link_libraries(rubylicious
 	${RUBY_LIBS}
 	${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${SDL2_MIXER_LIBRARIES}
 	${OPENGL_LIBRARIES} ${GLEW_LIBRARIES}
