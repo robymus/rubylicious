@@ -6,6 +6,8 @@ hopefully.
 
 ## Compiling
 
+It's designed to be developed on Linux, with crosscompiling to win32. It might be possible to compile on native Windows, but the dependencies might not work as they are now. 
+
 `./create-build-files.sh` to create the ninja build files in build/
 
 `./b-linux.sh` or `./b-win.sh` to build the binaries (stored in `build/(linux|win32)`)
