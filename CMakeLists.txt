@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.1...3.16)
 
-# We are building the rubylicious demo engine, yay!
-project(Rubylicious)
+project(rubylicious
+	VERSION 1.0
+	DESCRIPTION "The rubylicious demo engine"
+	LANGUAGES C CXX)
 
 # Meaningless message to avoid warning
 if (CMAKE_TOOLCHAIN_FILE)
@@ -13,7 +15,7 @@ include(cmake/ruby.cmake)
 include(cmake/sdl2.cmake)
 include(cmake/opengl.cmake)
 
-# finally the source
+# finally the code
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
