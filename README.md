@@ -13,6 +13,6 @@ See [package dependencies](doc/Dependencies.md) and info on [compiling ruby](doc
 
 ## Distribution
 
-On windows, the additional dll files from `arch/i386-mingw32/dll` are required. SDL_image handles .xcf (Gimp) files built in. If other formats (PNG, JPEG, etc.) are needed, add the required DLL files as described at https://www.libsdl.org/projects/SDL_image/
+On windows, the additional dll files from `arch/i386-mingw32/dll` are required. Currently only the .png external file format is added to sdl_image - if you need additional image formats, add the required DLL files as described at https://www.libsdl.org/projects/SDL_image/ (also modification in the code is necessary - in call to IMG_INIT).
 
 TODO: automatic creation of distribution package, linux/windows as well
