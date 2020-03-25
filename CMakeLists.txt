@@ -3,6 +3,11 @@ cmake_minimum_required(VERSION 3.16)
 # We are building the rubylicious demo engine, yay!
 project(Rubylicious)
 
+# Meaningless message to avoid warning
+if (CMAKE_TOOLCHAIN_FILE)
+	message(STATUS "Using toolchain file: ${CMAKE_TOOLCHAIN_FILE}.")
+endif()
+
 # Let's set up our ruby version to use
 set(RUBY_VERSION 2.7.0)
 
