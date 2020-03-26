@@ -3,7 +3,8 @@ cmake_minimum_required(VERSION 3.1...3.16)
 project(rubylicious
 	VERSION 1.0
 	DESCRIPTION "The rubylicious demo engine"
-	LANGUAGES C CXX)
+	LANGUAGES CXX
+)
 
 # Meaningless message to avoid warning
 if (CMAKE_TOOLCHAIN_FILE)
@@ -19,11 +20,12 @@ include(cmake/opengl.cmake)
 include_directories(lib/glm)
 
 # finally the code
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(rubylicious
-	src/helloworld.c
+	src/rubylicious.cpp
+	src/RubyWrapper.hpp
 )
 
 target_link_libraries(rubylicious
