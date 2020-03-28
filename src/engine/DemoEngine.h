@@ -11,6 +11,10 @@
  */
 class DemoEngine {
 public:
+
+    constexpr static int OPENGL_MAJOR_VERSION = 4;
+    constexpr static int OPENGL_MINOR_VERSION = 6;
+
     // setup / teardown related stuff
 
     /* initialize everything, returns non-null error message in case of error */
