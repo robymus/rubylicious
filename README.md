@@ -1,8 +1,18 @@
-# rubylicious
-## the rubylicious demo engine
+# Rubylicious
+## The Rubylicious Demo Engine
 ### soon :)
 
 hopefully.
+
+## What is it? How does it work?
+
+The basic idea is that a demo will be scripted from Ruby, with the low level functions implemented in a C++ engine.
+
+This project comes with a sample demo that exercises all the exposed API functions.
+
+The main functions are exposed through a Demo class, actually its class methods (eg. singleton methods) to Ruby.
+
+Check out the [API documentation](apidoc/README.md).
 
 ## Compiling
 
