@@ -62,8 +62,8 @@ The following event types are mapped currently, with associated event hash forma
 [
     source: 'keyboard',
     type: 'KEYUP' | 'KEYDOWN',
-    scancode: 'string',
-    key: 'string',
+    scancode: 0,
+    key: 0,
     modifiers: 0    
 ]
 ```
