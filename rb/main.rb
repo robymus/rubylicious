@@ -4,10 +4,9 @@ $LOAD_PATH << File.dirname(__FILE__)
 # initialize things
 begin
     Demo.init
-    Demo.setGLAttribute('CONTEXT_MAJOR_VERSION', 4);
-    Demo.setGLAttribute('CONTEXT_MINOR_VERSION', 0);
-    Demo.setGLAttribute('CONTEXT_PROFILE_MASK', 'CORE');
-    Demo.createWindow("Rubylicious Demo Engine", 1920, 1080);
+    Demo.createWindow("Rubylicious Demo Engine", 1280, 720)
+    v = Demo.setVSync(-1) # adaptive vsync
+    puts "Running in #{Demo.width}x#{Demo.height}, vsync: " + %w(off on adaptive)[v]
 rescue RuntimeError => ex
     puts "Demo initialization failed: #{ex.message}"
     Demo.messageBox("Error", ex.message, "error")

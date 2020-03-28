@@ -63,6 +63,23 @@ namespace Ruby {
                }
         );
 
+        // Demo.setVSync(value)
+        rb_define_singleton_method_tmpl<1>::define(rb_cDemo, "setVSync",
+               [](VALUE self, VALUE value) -> VALUE {
+                   int vsync = NUM2INT(value);
+                   int res = SDL_GL_SetSwapInterval(vsync);
+                   if (res == -1 && vsync == -1) {
+                       // if adaptive vsync is not supported, try normal
+                       vsync = 1;
+                       res = SDL_GL_SetSwapInterval(vsync);
+                   }
+                   // if still not good, error
+                   if (res) rb_raise(rb_eRuntimeError, SDL_GetError());
+                   // otherwise return value set
+                   return vsync;
+               }
+        );
+
         // Demo.pollEvents { |evt| ... }
         rb_define_singleton_method_tmpl<0>::define(rb_cDemo, "pollEvents",
                [](VALUE self) -> VALUE {

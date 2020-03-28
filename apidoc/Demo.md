@@ -40,6 +40,15 @@ Value is parsed as integer, except for CONTEXT_PROFILE_MASK, where "CORE", "COMP
 
 May throw *RuntimeError* exception with error message.
 
+### Demo.setVSync(value)
+
+Sets vertical sync to
+- 0: disabled
+- 1: enabled
+- -1: adaptive vsync (enabled if fast enough)
+
+Adaptive vsync falls back to enabled if not supported. The actual effective value is returned.
+
 ## Information query
 
 ### Demo.width, Demo.height
