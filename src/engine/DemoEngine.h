@@ -33,6 +33,7 @@ public:
     int height = 0;
 
 private:
+    bool sdlInitialized = false;
     bool windowReady = false;
     SDL_Window *window;
     SDL_GLContext context;

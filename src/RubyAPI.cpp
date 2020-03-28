@@ -4,7 +4,6 @@
  * The RubyWrapper.hpp file contains some wrapping functions for the Ruby C API
  */
 
-#include "RubyAPI.h"
 #include "RubyWrapper.h"
 #include "RubyHelper.h"
 #include <string>
@@ -87,8 +86,8 @@ namespace Ruby {
             rb_raise(rb_eRuntimeError, "Can't instantiate new Rubylicious Demo object");
         });
 
-        // Demo.initialize
-        rb_define_singleton_method_tmpl<0>::define(rb_cDemo, "initialize",
+        // Demo.init
+        rb_define_singleton_method_tmpl<0>::define(rb_cDemo, "init",
                 [](VALUE self) -> VALUE { return RubyHelper::handleError(demo.initialize()); }
         );
 
@@ -185,9 +184,9 @@ namespace Ruby {
     /*
      * Run main script (eg. enty point)
      * Note: should start with ./
-     * Returns true, if terminated successfully, false in case of Exception (logged to stderr as well)
+     * Returns exception as string, if terminated with Exception, nullptr otherwise
      */
-    bool runScript(const char *mainScriptName) {
+    const char *runScript(const char *mainScriptName) {
         // call requireMainRubyScript with exception handler
         int runRubyScriptState;
         rb_protect(
@@ -200,20 +199,21 @@ namespace Ruby {
             if (RTEST(exception)) {
                 // invoke .full_message to get full message
                 auto full_message = rb_funcall(exception, rb_intern("full_message"), 0);
-                fprintf(stderr, "Ruby exited with Exception\n%s\n", StringValueCStr(full_message));
+                return StringValueCStr(full_message);
             }
             else {
-                fprintf(stderr, "Ruby exited with null Exception (I'm as confused as you are)\n");
+                return"Ruby exited with null Exception (I'm as confused as you are)";
             }
-            return false;
         }
         else {
-            return true;
+            // no error
+            return nullptr;
         }
     }
 
     /* Closes the VM */
     void shutdown() {
+        demo.shutdown(); // just in case ruby didn't close down the demo engine correctly
         ruby_finalize();
     }
 

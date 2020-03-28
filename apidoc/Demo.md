@@ -12,7 +12,7 @@ Shows a modal message box (mainly for error messages). This can be used before a
 
 Type must be "error", "warning" or "information", everything else defaults to information.
 
-### Demo.initialize
+### Demo.init
 
 Initialize engine and SDL. May throw *RuntimeError* exception with error message. 
 

@@ -14,13 +14,17 @@ const char *DemoEngine::initialize() {
         return SDL_GetError();
     }
 
+    sdlInitialized = true;
     return nullptr;
 }
 
 /* shut down everything */
 void DemoEngine::shutdown() {
-    closeWindow();
-    SDL_Quit();
+    if (sdlInitialized) {
+        closeWindow();
+        SDL_Quit();
+        sdlInitialized = false;
+    }
 }
 
 /*

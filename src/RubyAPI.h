@@ -11,9 +11,9 @@ namespace Ruby {
     /**
      * Run main script (eg. enty point)
      * Note: should start with ./
-     * Returns true, if terminated successfully, false in case of Exception (logged to stderr as well)
+     * Returns exception as string, if terminated with Exception, nullptr otherwise
      */
-    bool runScript(const char *mainScriptName);
+    const char *runScript(const char *mainScriptName);
 
     /**
      * Shuts down the Ruby VM

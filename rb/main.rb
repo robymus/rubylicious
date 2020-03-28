@@ -3,13 +3,11 @@ $LOAD_PATH << File.dirname(__FILE__)
 
 # initialize things
 begin
-    Demo.initialize
+    Demo.init
     Demo.setGLAttribute('CONTEXT_MAJOR_VERSION', 4);
-    Demo.setGLAttribute('CONTEXT_MINOR_VERSION', 6);
+    Demo.setGLAttribute('CONTEXT_MINOR_VERSION', 0);
     Demo.setGLAttribute('CONTEXT_PROFILE_MASK', 'CORE');
-
     Demo.createWindow("Rubylicious Demo Engine", 1920, 1080);
-
 rescue RuntimeError => ex
     puts "Demo initialization failed: #{ex.message}"
     Demo.messageBox("Error", ex.message, "error")
