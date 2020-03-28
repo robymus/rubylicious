@@ -25,8 +25,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(rubylicious
 	src/rubylicious.cpp
-	src/RubyWrapper.hpp
-)
+	src/RubyAPI.h
+	src/RubyAPI.cpp
+	src/RubyWrapper.h
+	src/engine/DemoEngine.cpp
+	src/engine/DemoEngine.h
+		src/RubyHelper.h src/RubyHelper.cpp)
 
 target_link_libraries(rubylicious
 	${RUBY_LIBS}
